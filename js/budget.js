@@ -104,9 +104,37 @@ function makeDropdown(category, field) {
 	template = Handlebars.compile(template);
 	var data = {};
 	data.name = category;
-	data.values = gsdata().order(field).distinct(field);
+	data.values = gsdata().order(field).distinct_multiple_values(field);
 	$("#string_search_menu_dropdowns").append(template(data));
 }
+
+// TAFFY EXTENSION FOR GETTING DISTINCT VALUES WHEN
+// COLUMNS HAVE MULTIPLE VALUES
+TAFFY.extend("distinct_multiple_values", function(c) {
+	// This runs the query or returns the results if it has already run
+	this.context({
+           results: this.getDBI().query(this.context())
+    });
+	var distinct_values = []
+	TAFFY.each(this.context().results, function(r) {
+		if (r[c].indexOf(",") != -1) {
+			var column_values = r[c].split(", ");
+			for (var i=0; i<column_values.length; i++) {
+				if (distinct_values.indexOf(column_values[i]) == -1) {
+					distinct_values.push(column_values[i]);
+				}
+			}
+		}
+		else {
+			if (distinct_values.indexOf(r[c]) == -1) {
+				distinct_values.push(r[c]);
+			}
+		}
+	});
+	distinct_values.sort();
+	console.log(distinct_values);
+	return distinct_values;
+});
 
 // FUNCTION TO BUILD A BLOCK OF THE DASHBOARD
 function makeDashboardBlock(title, column, operator, value) {
