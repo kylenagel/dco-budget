@@ -132,7 +132,6 @@ TAFFY.extend("distinct_multiple_values", function(c) {
 		}
 	});
 	distinct_values.sort();
-	console.log(distinct_values);
 	return distinct_values;
 });
 
@@ -155,10 +154,12 @@ function buildStringSearchResult(assignedto,category) {
 	// BUILD QUERY
 	var query = {};
 	if (assignedto) {
-		query.assignedto = assignedto
+		query.assignedto = {};
+		query.assignedto["likenocase"] = assignedto
 	}
 	if (category) {
-		query.category = category
+		query.category = {};
+		query.category["likenocase"] = category
 	}
 	// GET TEMPLATE
 	var template = $("#search_result_template").html();
