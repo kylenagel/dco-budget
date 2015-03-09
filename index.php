@@ -12,10 +12,10 @@
 	<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="css/budget.css">
 	
-	<script src="../../../common/js/jquery/jquery-1.11.2.min.js"></script>
-	<script src="../../../common/js/handlebars/handlebars-v3.0.0.js"></script>
-	<script src="../../../common/js/momentjs/moment.js"></script>
-	<script src="../../../common/plugins/taffydb/taffy-min.js"></script>
+	<script src="http://kylernagel.com/common/js/jquery/jquery-1.11.2.min.js"></script>
+	<script src="http://kylernagel.com/common/js/handlebars/handlebars-v3.0.0.js"></script>
+	<script src="http://kylernagel.com/common/js/momentjs/moment.js"></script>
+	<script src="http://kylernagel.com/common/plugins/taffydb/taffy-min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
 	<script src="js/budget.js"></script>
