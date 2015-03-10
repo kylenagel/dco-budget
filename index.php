@@ -41,12 +41,12 @@
 				<div id="date_search_checkboxes">
 					<input type="checkbox" id="date_search_due" name="date_search_due" onchange="toggleCheckboxes(this)">
 					<label for="date_search_due">Due</label>
-					<input type="checkbox" id="date_search_published" name="date_search_published" onchange="toggleCheckboxes(this)" checked="checked">
-					<label for="date_search_due">Published</label>
+					<input type="checkbox" id="date_search_publish" name="date_search_publish" onchange="toggleCheckboxes(this)" checked="checked">
+					<label for="date_search_due">Publish</label>
 				</div>
 				<div class="search_input_container"><input type="text" id="startdate" name="startdate" class="datepicker" placeholder="Start date"></div>
 				<div class="search_input_container"><input type="text" id="enddate" name="enddate" class="datepicker" placeholder="End date"></div>
-				<input type="button" value="Find it!" onclick="buildDateSearchResult($('#startdate').val(), $('#enddate').val())">
+				<input type="button" value="Find it!" onclick="buildDateSearchResult($('#startdate').val(), $('#enddate').val(), $('#date_search_checkboxes input:checked').attr('id').split('_')[2])">
 			</div>
 		</div>
 
