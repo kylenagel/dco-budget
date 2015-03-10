@@ -214,7 +214,6 @@ function buildDateSearchResult(startdate, enddate, search_property) {
 		// SET QUERY
 		var query = {}
 		query[search_property] = date;
-		console.log(query);
 		// BUILD DATA
 		var data = {};
 		data.label = moment(date).format('dddd, MMM D')
