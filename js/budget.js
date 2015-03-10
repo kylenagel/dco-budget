@@ -218,3 +218,11 @@ function buildDateSearchResult(startdate, enddate) {
 		$("#search_result").append(template(data));
 	}
 }
+
+function toggleCheckboxes(el) {
+	var checkboxes = document.getElementById("date_search_checkboxes").getElementsByTagName("input");
+	for(var i=0; i<checkboxes.length; i++) {
+		checkboxes[i].checked = false
+	}
+	el.checked = true;
+}
