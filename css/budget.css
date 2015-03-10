@@ -53,6 +53,23 @@ body {
 #dashboard .dashboard_block table .title_cell {
 	width: 70%;
 }
+#date_search_checkboxes {
+	display: inline-block;
+}
+#date_search_checkboxes input, #date_search_checkboxes label {
+	width: auto!important;
+	vertical-align: middle;
+}
+#date_search_checkboxes input {
+	margin: 0px 0px 0px 7px;
+}
+#date_search_checkboxes label {
+	font: 12px Open Sans, 'sans-serif';
+	line-height: 18px;
+}
+#date_search_menu h4 {
+	display: inline-block;
+}
 h1,h2,h3,h4,h5,h6 {
 	font-family: 'Oswald', sans-serif;
 }
