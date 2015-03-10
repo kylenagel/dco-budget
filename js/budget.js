@@ -184,7 +184,7 @@ function buildStringSearchResult(assignedto,category) {
 }
 
 // FUNCTION TO BUILD DATE SEARCH RESULT
-function buildDateSearchResult(startdate, enddate) {
+function buildDateSearchResult(startdate, enddate, search_property) {
 	// EMPTY THE SEARCH RESULT CONTAINER
 	$("#search_result").html('');
 	// INIT AN ARRAY OF CHOSEN DATES
@@ -203,17 +203,22 @@ function buildDateSearchResult(startdate, enddate) {
 	}
 	// LOOP THROUGH DATES AND BUILD A BLOCK FOR EACH DATE
 	for (var i=0; i<dates.length; i++) {
-		buildDateSearchResultBlock(dates[i]);
+		buildDateSearchResultBlock(dates[i], search_property);
 	}
 	// FUNCTION TO BUILD AND OUTPUT THE RESULTS FOR INDIVIDUAL DATES
-	function buildDateSearchResultBlock(date) {
+	function buildDateSearchResultBlock(date, search_property) {
+		console.log(search_property);
 		// GET TEMPLATE
 		var template = $("#search_result_template").html();
 		template = Handlebars.compile(template);
+		// SET QUERY
+		var query = {}
+		query[search_property] = date;
+		console.log(query);
 		// BUILD DATA
 		var data = {};
 		data.label = moment(date).format('dddd, MMM D')
-		data.stories = gsdata({publish: date}).get();
+		data.stories = gsdata(query).get();
 		// OUTPUT
 		$("#search_result").append(template(data));
 	}
