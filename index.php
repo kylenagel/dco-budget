@@ -38,6 +38,12 @@
 			</div>
 			<div id="date_search_menu" class="search_menu">
 				<h4>Search by date range</h4>
+				<div id="date_search_checkboxes">
+					<input type="checkbox" id="date_search_due" name="date_search_due">
+					<label for="date_search_due">Due</label>
+					<input type="checkbox" id="date_search_published" name="date_search_published" checked>
+					<label for="date_search_due">Published</label>
+				</div>
 				<div class="search_input_container"><input type="text" id="startdate" name="startdate" class="datepicker" placeholder="Start date"></div>
 				<div class="search_input_container"><input type="text" id="enddate" name="enddate" class="datepicker" placeholder="End date"></div>
 				<input type="button" value="Find it!" onclick="buildDateSearchResult($('#startdate').val(), $('#enddate').val())">
