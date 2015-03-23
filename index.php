@@ -78,9 +78,9 @@
 			{{#stories}}
 			<tr>
 				{{#if medleyurl}}
-					<td class="title_cell"><a href="{{medleyurl}}" target="_blank">{{assignment}}</a></td>
+					<td class="title_cell"><a href="{{medleyurl}}" target="_blank">{{story}}</a></td>
 				{{else}}
-					<td class="title_cell">{{assignment}}</td>
+					<td class="title_cell">{{story}}</td>
 				{{/if}}
 				<td class="assigned_cell">{{assignedto}}</td>
 			</tr>
@@ -102,7 +102,7 @@
 		{{#if stories}}
 		<table>
 			<thead>
-				<th>Assignment</th>
+				<th>Story</th>
 				<th>Category</th>
 				<th>Assigned To</th>
 				<th>Due</th>
@@ -112,9 +112,9 @@
 				{{#stories}}
 				<tr>
 					{{#if medleyurl}}
-						<td><a href="{{medleyurl}}" target="_blank">{{assignment}}</a></td>
+						<td><a href="{{medleyurl}}" target="_blank">{{story}}</a></td>
 					{{else}}
-						<td>{{assignment}}</td>
+						<td>{{story}}</td>
 					{{/if}}
 					<td class="align_center">{{category}}</td>
 					<td class="align_center">{{assignedto}}</td>
