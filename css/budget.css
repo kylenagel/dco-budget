@@ -160,3 +160,42 @@ p,li,input,select {
 #search_result table tbody tr td:nth-child(3) { width: 20%; }
 #search_result table tbody tr td:nth-child(4) { width: 15%; }
 #search_result table tbody tr td:nth-child(5) { width: 15%; }
+#upcoming_stories {
+	margin: 21px 0px;
+	padding: 7px 0px 0px 0px;
+	border-top: solid thin rgba(0,0,0,0.2);
+}
+#upcoming_stories h3 {}
+#upcoming_stories h3 span {
+	border: solid thin #61A2D4;
+	padding: 4px 14px;
+	border-radius: 7px;
+}
+#upcoming_stories h3 span:hover {
+	cursor: pointer;
+}
+#upcoming_stories h3 span.active {
+	background: #61A2D4;
+	color: white;
+}
+#upcoming_stories table {
+	width: 100%;
+	border-collapse: collapse;
+}
+#upcoming_stories table thead {
+	background: #61A2D4;
+}
+#upcoming_stories table thead th {
+	color: white;
+	font: 16px 'Oswald', sans-serif;
+}
+#upcoming_stories tbody tr:nth-child(even) {
+	background: rgba(0,0,0,0.1);
+}
+#upcoming_stories th, #upcoming_stories td {
+	padding: 7px;
+}
+#upcoming_stories td {
+	font: 14px 'Open Sans', sans-serif;
+	padding: 14px 7px;
+}

@@ -54,6 +54,15 @@
 
 		<div id="dashboard"></div>
 
+		<div id="upcoming_stories">
+			<h3>
+				Stories that aren't yet:
+				<span onclick="showCorrectUpcomingStories(this, 'publish')">Published</span>
+				<span onclick="showCorrectUpcomingStories(this, 'due')">Due</span>
+			</h3>
+			<div id="upcoming_stories_result"></div>
+		</div>
+
 	</div>
 
 </body>
@@ -128,6 +137,37 @@
 		<p>No results to display</p>
 		{{/if}}
 	</div>
+</script>
+
+<script id="upcoming_stories_template" type="text/x-handlebars-template">
+{{#if stories}}
+<table>
+	<thead>
+		<tr>
+			<th>Story</th>
+			<th>Assigned To</th>
+			<th>Due</th>
+			<th>Publish</th>
+			<th>Turned in</th>
+			<th>Edited</th>
+		</tr>
+	</thead>
+	<tbody>
+		{{#stories}}
+		<tr>
+			<td>{{story}}</td>
+			<td class="align_center">{{assignedto}}</td>
+			<td class="align_center">{{due}}</td>
+			<td class="align_center">{{publish}}</td>
+			<td class="align_center">{{turnedin}}</td>
+			<td class="align_center">{{edited}}</td>
+		</tr>
+		{{/stories}}
+	</tbody>
+</table>
+{{else}}
+<p>No results to display</p>
+{{/if}}
 </script>
 
 </html>

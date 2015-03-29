@@ -29,6 +29,7 @@ var dashboards = [
 		operator: '==',
 		value: moment().format('MM/DD/YYYY')
 	},
+	/*
 	{
 		title: 'Unedited',
 		column: 'edited',
@@ -41,6 +42,7 @@ var dashboards = [
 		operator: '==',
 		value: 'Need to assign'
 	}
+	*/
 ]
 
 // GET DATA FROM SPREADSHEET
@@ -59,7 +61,8 @@ $.ajax({
 		for (var i=0; i<dashboards.length; i++) {
 			makeDashboardBlock(dashboards[i].title, dashboards[i].column, dashboards[i].operator, dashboards[i].value);
 		}
-
+		// SHOW UNPUBLISHED STORIES IN TABLE
+		showCorrectUpcomingStories(document.getElementById("upcoming_stories").getElementsByTagName("h3")[0].getElementsByTagName("span")[0], 'publish');
 	}
 });
 
@@ -133,6 +136,23 @@ TAFFY.extend("distinct_multiple_values", function(c) {
 	});
 	distinct_values.sort();
 	return distinct_values;
+});
+
+// TAFFY EXTENTION FOR QUERYING STORIES
+// NOT YET PUBLISHED OR NOT YET DUE
+TAFFY.extend('upcoming', function(c) {
+	var today = moment().format('MM/DD/YYYY');
+	// This runs the query or returns the results if it has already run
+	this.context({
+           results: this.getDBI().query(this.context())
+    });
+    var upcoming = [];
+    TAFFY.each(this.context().results, function(r) {
+    	if (r[c] != '' && moment(r[c]).format('MM/DD/YYYY') > today) {
+    		upcoming.push(r);
+    	}
+    });
+    return upcoming;
 });
 
 // FUNCTION TO BUILD A BLOCK OF THE DASHBOARD
@@ -229,4 +249,14 @@ function toggleCheckboxes(el) {
 		checkboxes[i].checked = false
 	}
 	el.checked = true;
+}
+
+function showCorrectUpcomingStories(el, type) {
+	var data = {};
+	data.stories = gsdata().order(type).upcoming(type);
+	var template = $("#upcoming_stories_template").html();
+	template = Handlebars.compile(template);
+	$("#upcoming_stories_result").html(template(data));
+	$("#upcoming_stories h3 span").removeClass("active");
+	$(el).addClass("active")
 }
