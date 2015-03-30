@@ -155,7 +155,11 @@
 	<tbody>
 		{{#stories}}
 		<tr>
-			<td>{{story}}</td>
+			{{#if medleyurl}}
+				<td><a href="{{medleyurl}}" target="_blank">{{story}}</a></td>
+			{{else}}
+				<td>{{story}}</td>
+			{{/if}}
 			<td class="align_center">{{assignedto}}</td>
 			<td class="align_center">{{due}}</td>
 			<td class="align_center">{{publish}}</td>
