@@ -148,7 +148,7 @@ TAFFY.extend('upcoming', function(c) {
     });
     var upcoming = [];
     TAFFY.each(this.context().results, function(r) {
-    	if (r[c] != '' && moment(r[c]).format('MM/DD/YYYY') > today) {
+    	if (r[c] != '' && moment(r[c]).format('MM/DD/YYYY') >= today) {
     		upcoming.push(r);
     	}
     });
