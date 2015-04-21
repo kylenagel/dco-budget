@@ -16,6 +16,66 @@ body {
 	padding: 0px;
 	background: #ebebeb;
 }
+#categories_table {
+	margin: 14px 0px;
+	padding: 14px 0px 0px 0px;
+	border-top: solid thin rgba(0,0,0,0.1);
+}
+#categories_table table {
+	width: 500px;
+	border-collapse: collapse;
+}
+#categories_table table th, #categories_table table td {
+	padding: 7px;
+}
+#categories_table table thead {}
+#categories_table table thead tr {
+	background: black;
+}
+#categories_table table thead tr th {
+	color: white;
+}
+#categories_table table tbody {}
+#categories_table table tbody tr {}
+#categories_table table tbody tr.section_name {
+	font-weight: bold;
+}
+#categories_table table tbody tr td {
+	border: solid thin rgba(0,0,0,0.1);
+}
+#categories_table table tbody tr.body td {
+}
+#categories_table table tbody tr.body.section_name td {
+	font-weight: bold;
+}
+#categories_table table tbody tr.body:hover {
+	background: #ededed!important;
+}
+#categories_table table tbody tr.subhead td {
+	font-size: 18px;
+	line-height: 27px;
+}
+#categories_table table tbody tr.subhead.what_to_know {
+	background: #F6693A;
+	color: white;
+}
+#categories_table table tbody tr.body.what_to_know {
+	background: rgba(246,105,58,0.1);
+}
+#categories_table table tbody tr.subhead.what_to_do {
+	background: #603765;
+	color: white;
+}
+#categories_table table tbody tr.body.what_to_do {
+	background: rgba(96,55,101,0.1);
+}
+#categories_table table tbody tr.subhead.what_to_love {
+	background: #20ABAB;
+	color: white;
+}
+#categories_table table tbody tr.body.what_to_love {
+	background: rgba(32,171,171,0.1);
+}
 #container {
 	width: 70%;
 	min-width: 1000px;
@@ -70,10 +130,10 @@ body {
 #date_search_menu h4 {
 	display: inline-block;
 }
-h1,h2,h3,h4,h5,h6 {
+h1,h2,h3,h4,h5,h6,th {
 	font-family: 'Oswald', sans-serif;
 }
-p,li,input,select {
+p,li,td,input,select {
 	font: 14px 'Open Sans', sans-serif;
 }
 #search_menus {

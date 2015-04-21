@@ -63,6 +63,125 @@
 			<div id="upcoming_stories_result"></div>
 		</div>
 
+		<div id="categories_table">
+			<h3>What categories or topics should I use?</h3>
+			<table>
+				<thead>
+					<tr>
+						<th>SECTION</th>
+						<th>CATEGORY</th>
+						<th>TOPIC</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="subhead what_to_know">
+						<td colspan="100">WHAT TO KNOW</td>
+					</tr>
+					<tr class="body section_name what_to_know">
+						<td>What to Know</td>
+						<td>News/Local</td>
+						<td></td>
+					</tr>
+					<tr class="body what_to_know">
+						<td>Daytonomics</td>
+						<td>Business/Economy</td>
+						<td></td>
+					</tr>
+					<tr class="body what_to_know">
+						<td>Where to Work</td>
+						<td>Business/Employment</td>
+						<td></td>
+					</tr>
+					<tr class="subhead what_to_do">
+						<td colspan="100">WHAT TO DO</td>
+					</tr>
+					<tr class="body section_name what_to_do">
+						<td>What to Do</td>
+						<td>Places</td>
+						<td></td>
+					</tr>
+					<tr class="body what_to_do">
+						<td>Events</td>
+						<td>Events</td>
+						<td></td>
+					</tr>
+					<tr class="body what_to_do">
+						<td>Bars & Clubs</td>
+						<td>Places/Bar-Nightclub</td>
+						<td></td>
+					</tr>
+					<tr class="body what_to_do">
+						<td>Restaurants</td>
+						<td>Places/Restaurant</td>
+						<td></td>
+					</tr>
+					<tr class="body what_to_do">
+						<td>Theatre & Arts</td>
+						<td>Places/Theater</td>
+						<td></td>
+					</tr>
+					<tr class="body what_to_do">
+						<td>Music</td>
+						<td>Events/Concerts</td>
+						<td></td>
+					</tr>
+					<tr class="body what_to_do">
+						<td>Parks & Rec</td>
+						<td>Places/Park</td>
+						<td></td>
+					</tr>
+					<tr class="body what_to_do">
+						<td>Free & Cheap</td>
+						<td>Events/Neighborhood-Community</td>
+						<td></td>
+					</tr>
+					<tr class="subhead what_to_love">
+						<td colspan="100">WHAT TO LOVE</td>
+					</tr>
+					<tr class="body section_name what_to_love">
+						<td>What to Love</td>
+						<td>Lifestyles</td>
+						<td></td>
+					</tr>
+					<tr class="body what_to_love">
+						<td>Daytonian of the Week</td>
+						<td>Entertainment/Personalities</td>
+						<td></td>
+					</tr>
+					<tr class="body what_to_love">
+						<td>History</td>
+						<td>News/Special Reports</td>
+						<td></td>
+					</tr>
+					<tr class="body what_to_love">
+						<td>Volunteer</td>
+						<td>Events/Fundraiders/Volunteer</td>
+						<td></td>
+					</tr>
+					<tr class="body what_to_love">
+						<td>Be Green</td>
+						<td>Lifestyles/Environment</td>
+						<td></td>
+					</tr>
+					<tr class="body what_to_love">
+						<td>Walk of Fame</td>
+						<td>News/Special Reports</td>
+						<td>walkoffame</td>
+					</tr>
+					<tr class="body what_to_love">
+						<td>Dayton Bucket List</td>
+						<td>Entertainment/Attractions</td>
+						<td>bucketlist</td>
+					</tr>
+					<tr class="body what_to_love">
+						<td>Where to Live</td>
+						<td>Lifestyles/Home</td>
+						<td>wheretolive</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
 	</div>
 
 </body>
