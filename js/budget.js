@@ -155,6 +155,24 @@ TAFFY.extend('upcoming', function(c) {
     return upcoming;
 });
 
+// TAFFY EXTENTION FOR QUERYING STORIES
+// NOT YET PUBLISHED OR NOT YET DUE
+TAFFY.extend('not_yet_due_or_published', function(c) {
+	var today = moment().format('MM/DD/YYYY');
+	// This runs the query or returns the results if it has already run
+	this.context({
+           results: this.getDBI().query(this.context())
+    });
+    var upcoming = [];
+    TAFFY.each(this.context().results, function(r) {
+    	if (r['due'] != '' && moment(r['due']).format('MM/DD/YYYY') >= today || r['publish'] != '' && moment(r['publish']).format('MM/DD/YYYY') >= today) {
+    		upcoming.push(r);
+    	}
+    });
+    return upcoming;
+});
+
+
 // FUNCTION TO BUILD A BLOCK OF THE DASHBOARD
 function makeDashboardBlock(title, column, operator, value) {
 	var query = {}
@@ -198,7 +216,7 @@ function buildStringSearchResult(assignedto,category) {
 		data.label += 'Category: '+category;
 	}
 	// QUERY THE DATA
-	data.stories = gsdata(query).order("publish").get();
+	data.stories = gsdata(query).order("due").not_yet_due_or_published();
 	// OUTPUT THE TEMPLATE WITH THE DATA
 	$("#search_result").append(template(data));
 }
